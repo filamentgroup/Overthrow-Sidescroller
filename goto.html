@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Overthrow Demo</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="_demo-assets/demo.css" rel="stylesheet">
+	<link href="_demo-assets/proxima.nova.woff.css" rel="stylesheet">
+
+	<style>
+		.overthrow-enabled .overthrow {
+			-webkit-overflow-scrolling: touch;
+		}
+	    .overthrow-enabled .sidescroll ul {
+			width: 466%;
+		}
+		@media (min-width: 40em){
+			.overthrow-enabled .sidescroll ul {
+				width: 350%;
+			}
+		}
+		@media (min-width: 60em){
+			.overthrow-enabled .sidescroll ul {
+				width: 280%;
+			}
+		}
+
+		.sidescroll-nextprev-links a.disabled,
+		.sidescroll-nextprev-links a.disabled:hover {
+			opacity: .25;
+		}
+	</style>
+
+	<!-- Overthrow base library: https://github.com/filamentgroup/Overthrow -->
+	<script src="src/lib/overthrow.min.js"></script>
+
+	<!-- Sidescroller Core: -->
+	<script src="dist/overthrow.sidescroller.min.js"></script>
+
+	<!-- Extensions: -->
+	<script src="src/extensions/overthrow-sidescroller.goto.js"></script>
+</head>
+<body>
+
+	<div class="docs-masthead">
+		<a href="index.html" class="logo"><img src="_demo-assets/img/fg-logo.png" alt="Filament Group Inc." /></a>
+		<h1 class="docs"><strong>Overthrow</strong> demos and documentation: <strong class="subhed">Sidescroller</strong></h1>
+	</div>
+
+	<div class="docs-globalnav">
+		<nav class="docs-nav">
+			<a href="index.html">Overview</a>
+			<a href="rewind.html">Rewind</a>
+			<a href="snap.html">Snap</a>
+			<a href="fixed-width.html">Fixed Width</a>
+			<a href="append.html">Append</a>
+			<a href="skiplinks.html">Skiplinks</a>	
+			<a href="disabled-nav.html">Disable Nav</a>
+			<a href="goto.html" class="current">GoTo</a>
+		</nav>
+	</div>
+
+	<div class="docbody">
+		<h1 class="docs">Goto extension</h1>
+		<p>The <code>goto</code> extension provides a method for programmatically scrolling to individual child elements. No specific options are required when the Sidescroller is initilized.</p>
+
+		<div class="sidescroll-nextprev sidescroll-goto">
+			<div class="overthrow sidescroll">
+				<ul>
+					<li><img src="_demo-assets/photos/1.jpg"></li>
+					<li><img src="_demo-assets/photos/2.jpg"></li>
+					<li><img src="_demo-assets/photos/3.jpg"></li>
+					<li><img src="_demo-assets/photos/4.jpg"></li>
+					<li><img src="_demo-assets/photos/5.jpg"></li>
+					<li><img src="_demo-assets/photos/6.jpg"></li>
+					<li><img src="_demo-assets/photos/7.jpg"></li>
+					<li><img src="_demo-assets/photos/8.jpg"></li>
+					<li><img src="_demo-assets/photos/9.jpg"></li>
+					<li><img src="_demo-assets/photos/10.jpg"></li>
+					<li><img src="_demo-assets/photos/11.jpg"></li>
+					<li><img src="_demo-assets/photos/12.jpg"></li>
+					<li><img src="_demo-assets/photos/13.jpg"></li>
+					<li><img src="_demo-assets/photos/14.jpg"></li>
+				</ul>
+			</div>
+		</div>
+		<p><a href="#" class="goto">Skip to the fifth slide</a></p>
+<code><pre>&lt;script src="src/extensions/overthrow-sidescroller.goto.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+var scrollers = document.querySelectorAll( ".overthrow-enabled .sidescroll-goto" );
+overthrow.sidescroller(scrollers);
+
+document.querySelector( "a.goto" ).onclick = function( e ){
+	<strong>overthrow.sidescroller( document.querySelectorAll( ".overthrow-enabled .sidescroll-nextprev" ), "goTo", 4 );</strong> // Slide numbers are zero-indexed.
+	e.preventDefault();
+}
+&lt;/script&gt;
+</pre></code>
+	</div>
+		<script>
+			var scrollers = document.querySelectorAll( ".overthrow-enabled .sidescroll-goto" );
+			overthrow.sidescroller(scrollers);
+
+			document.querySelector( "a.goto" ).onclick = function( e ){
+				overthrow.sidescroller( document.querySelectorAll( ".overthrow-enabled .sidescroll-nextprev" ), "goTo", 4 );
+				e.preventDefault();
+			}
+		</script>
+</body>
+</html>

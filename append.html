@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Overthrow Demo</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="_demo-assets/demo.css" rel="stylesheet">
+	<link href="_demo-assets/proxima.nova.woff.css" rel="stylesheet">
+
+	<style>
+		.overthrow-enabled .overthrow {
+			overflow-x: scroll;
+			overflow-y: hidden;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.overthrow.sidescroll li {
+			width: 200px;
+		}
+
+		.sidescroll-nextprev .sidescroll-nextprev-links a {
+			opacity: 0.9;
+		}
+
+		.sidescroll-nextprev .sidescroll-nextprev-links a.disabled {
+			opacity: 0.7;
+			pointer-events: none;
+			background-color: gray;
+		}
+		h1 {
+			font-size: 1.6em;
+		}
+
+		.append,
+		.remove {
+			display: block;
+			margin: .25em 0;
+			clear: both;
+		}
+		code {
+			clear: both;
+		}
+	</style>
+
+	<!-- Overthrow base library: https://github.com/filamentgroup/Overthrow -->
+	<script src="src/lib/overthrow.min.js"></script>
+
+	<!-- Sidescroller Core: -->
+	<script src="dist/overthrow.sidescroller.min.js"></script>
+
+	<!-- Extensions: -->
+	<script src="src/extensions/overthrow-sidescroller.append.js"></script>
+</head>
+<body>
+
+	<div class="docs-masthead">
+		<a href="index.html" class="logo"><img src="_demo-assets/img/fg-logo.png" alt="Filament Group Inc." /></a>
+		<h1 class="docs"><strong>Overthrow</strong> demos and documentation: <strong class="subhed">Sidescroller</strong></h1>
+	</div>
+
+	<div class="docs-globalnav">
+		<nav class="docs-nav">
+			<a href="index.html">Overview</a>
+			<a href="rewind.html">Rewind</a>
+			<a href="snap.html">Snap</a>
+			<a href="fixed-width.html">Fixed Width</a>
+			<a href="append.html" class="current">Append</a>
+			<a href="skiplinks.html">Skiplinks</a>	
+			<a href="disabled-nav.html">Disable Nav</a>
+			<a href="goto.html">GoTo</a>
+		</nav>
+	</div>
+
+	<div class="docbody">
+		<h1 class="docs">Append extension</h1>
+		<p>Including the <code>append</code> extension provides one with a method for gracefully handling the addition of child elements. To prevent Sidescroller items from resizing, this should be used inconjunction with fixed item widths and the <code>fixedItemWidth: true</code> option set.</p>
+
+		<div class="sidescroll-nextprev append-items">
+			<div class="overthrow sidescroll ">
+				<ul>
+					<li><img src="_demo-assets/photos/1.jpg"></li>
+					<li><img src="_demo-assets/photos/2.jpg"></li>
+					<li><img src="_demo-assets/photos/3.jpg"></li>
+					<li><img src="_demo-assets/photos/4.jpg"></li>
+					<li><img src="_demo-assets/photos/5.jpg"></li>
+					<li><img src="_demo-assets/photos/6.jpg"></li>
+					<li><img src="_demo-assets/photos/7.jpg"></li>
+					<li><img src="_demo-assets/photos/8.jpg"></li>
+					<li><img src="_demo-assets/photos/9.jpg"></li>
+					<li><img src="_demo-assets/photos/10.jpg"></li>
+					<li><img src="_demo-assets/photos/11.jpg"></li>
+					<li><img src="_demo-assets/photos/12.jpg"></li>
+					<li><img src="_demo-assets/photos/13.jpg"></li>
+					<li><img src="_demo-assets/photos/14.jpg"></li>
+				</ul>
+			</div>
+		</div>
+
+		<a href="#" class="append">Add another element</a>
+		<a href="#" class="remove">Remove the first element</a>
+
+		<code><pre>&lt;script src="src/extensions/overthrow-sidescroller.append.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+	var scrollers = document.querySelectorAll( ".overthrow-enabled .append-demo" );
+	overthrow.sidescroller( scrollers, { fixedItemWidth: true });
+
+	document.querySelector( "a.append" ).onclick = function( e ){
+		var li = document.createElement( "li" ),
+			img = document.createElement( "img");
+
+		img.src = "_demo-assets/photos/1.jpg";
+		li.appendChild( img );
+
+		// NOTE ie will add the width and height because of the assigned src
+		img.removeAttribute( "width" );
+		img.removeAttribute( "height" );
+
+		<strong>overthrow.sidescroller( scrollers, "append", li );</strong>
+		e.preventDefault();
+	}
+
+	document.querySelector( "a.remove" ).onclick = function( e ){
+		var first = scrollers[0].querySelector( "li" );
+
+		first.parentNode.removeChild( first );
+
+		<strong>overthrow.sidescroller( scrollers, "refresh" );</strong>
+		e.preventDefault();
+	}
+&lt;/script&gt;</pre></code>
+	</div>
+
+	<script>
+		var scrollers = document.querySelectorAll( ".overthrow-enabled .append-items" );
+		overthrow.sidescroller(scrollers , {fixedItemWidth: true} );
+
+		document.querySelector( "a.append" ).onclick = function(){
+			var li = document.createElement( "li" ),
+				img = document.createElement( "img");
+
+			img.src = "_demo-assets/photos/1.jpg";
+			li.appendChild( img );
+
+			// NOTE ie will add the width and height because of the assigned src
+			img.removeAttribute( "width" );
+			img.removeAttribute( "height" );
+
+			overthrow.sidescroller( document.querySelectorAll( ".overthrow-enabled .append-items" ), "append", li );
+		}
+
+		document.querySelector( "a.remove" ).onclick = function(){
+			var first = scrollers[0].querySelector( "li" );
+
+			first.parentNode.removeChild( first );
+
+			overthrow.sidescroller( scrollers, "refresh" );
+		}
+	</script>
+</body>
+</html>
