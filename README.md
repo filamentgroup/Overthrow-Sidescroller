@@ -193,7 +193,7 @@ Including the disabled navigation extension with the sidescroller adds a `disabl
 ```
 Setting `rewind` to true will disable this behavior.
 
-<a href="demos/disabled-nav.html">View Demo</a>
+<a href="http://filamentgroup.github.io/Overthrow-Sidescroller/demos/disabled-nav.html">View Demo</a>
 
 ## Append Method Extension
 
@@ -212,7 +212,7 @@ The calling convention for the `append` method is as follows:
 ```javascript
 overthrow.sidescroller( scrollerElements, "append", newLi );
 ```
-<a href="demos/append.html">View Demo</a>
+<a href="http://filamentgroup.github.io/Overthrow-Sidescroller/demos/append.html">View Demo</a>
 
 ## GoTo Extension
 
@@ -241,7 +241,7 @@ gogo.addEventListener( "click", function( e ) {
   e.preventDefault();
 });
 ```
-<a href="demos/goto.html">View Demo</a>
+<a href="http://filamentgroup.github.io/Overthrow-Sidescroller/demos/goto.html">View Demo</a>
 
 
 ## Removing Items
