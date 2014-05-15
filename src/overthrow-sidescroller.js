@@ -1,12 +1,4 @@
-/*
-	overthrow responsive sidescroller extension
-	(c) 2013: Scott Jehl, Filament Group, Inc.
-	MIT License
-*/
-
 (function( w, o ){
-
-
 	if( !o || !"querySelector" in w.document ){
 		return;
 	}

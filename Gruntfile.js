@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       core: {
-        src: core = ['src/lib/overthrow.min.js', 'src/<%= pkg.name %>.core.js'],
+        src: core = ['src/lib/overthrow.min.js', 'src/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.core.js'
       },
       all: {
