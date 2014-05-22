@@ -1,5 +1,7 @@
 ## Sidescroller
 
+[![Filament Group](http://filamentgroup.com/images/fg-logo-positive-sm-crop.png) ](http://www.filamentgroup.com/)
+
 The sidescroller is a demo extension included in this repo. Setting up the sidescroller requires a basic markup structure and some CSS.
 
 ### Sidescroller HTML
