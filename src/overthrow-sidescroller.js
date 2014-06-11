@@ -139,8 +139,8 @@
 						slidesWidth = thisScroll.offsetWidth,
 						slideWidth = slides[ 0 ].offsetWidth,
 						scrollLeft = left !== undefined ? left : thisScroll.scrollLeft,
-						startSlide = Math.round( scrollLeft / slideWidth ),
-						tollerance = 10,
+						startSlide = Math.ceil( scrollLeft / slideWidth ),
+						tolerance = 10,
 						ret = [];
 
 					startSlide = Math.max( 0, startSlide );
@@ -148,7 +148,7 @@
 
 					ret.push(startSlide);
 					for( var i = 2; i < numSlides; i++ ){
-						if( i * slideWidth < slidesWidth + tollerance ) {
+						if( i * slideWidth < slidesWidth + tolerance ) {
 							ret.push( startSlide + i - 1 );
 						}
 					}
