@@ -28,9 +28,10 @@
 
 		var disablePrev = false, disableNext = false,
 				slides, slidesWidth, currScroll, scrollWidth, activeSlide,
-				nextAnchor, prevAnchor, thisScroll, rwdAnchor, ffAnchor;
+				nextAnchor, prevAnchor, thisScroll, rwdAnchor, ffAnchor, anchors;
 
 
+		anchors = target.querySelector( ".sidescroll-nextprev-links" );
 		nextAnchor = target.querySelector( "a.sidescroll-next" );
 		prevAnchor = target.querySelector( "a.sidescroll-prev" );
 		rwdAnchor = target.querySelector( "a.sidescroll-rwd" );
@@ -67,6 +68,12 @@
 			removeClass( rwdAnchor, disabledClassStr );
 		}
 
+		// if the user can't go anywhere provide for hiding the nav links
+		if( disablePrev && disableNext ){
+			addClass( anchors, disabledClassStr );
+		}
+
+		// if the user can't go back provide for hiding the prev/rewind nav links
 		if( disablePrev ) {
 			addClass( prevAnchor, disabledClassStr );
 
@@ -75,6 +82,7 @@
 			}
 		}
 
+		// if the user can't go back provide for hiding the next/fast forward nav links
 		if( disableNext ) {
 			addClass( nextAnchor, disabledClassStr );
 
