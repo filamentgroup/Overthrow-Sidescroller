@@ -193,7 +193,7 @@ Including the disabled navigation extension with the sidescroller adds a `disabl
 ```
 Setting `rewind` to true will disable this behavior.
 
-<a href="http://filamentgroup.github.io/Overthrow/examples/sidescroller/disabled-nav.html">View Demo</a>
+<a href="http://filamentgroup.github.io/Overthrow-Sidescroller/demos/disabled-nav.html">View Demo</a>
 
 ## Append Method Extension
 
@@ -212,7 +212,7 @@ The calling convention for the `append` method is as follows:
 ```javascript
 overthrow.sidescroller( scrollerElements, "append", newLi );
 ```
-<a href="http://filamentgroup.github.io/Overthrow/examples/sidescroller/append.html">View Demo</a>
+<a href="http://filamentgroup.github.io/Overthrow-Sidescroller/demos/append.html">View Demo</a>
 
 ## GoTo Extension
 
@@ -241,36 +241,7 @@ gogo.addEventListener( "click", function( e ) {
   e.preventDefault();
 });
 ```
-<a href="http://filamentgroup.github.io/Overthrow/examples/sidescroller/goto.html">View Demo</a>
-
-## GoTo Extension
-
-Including the `goto` extension provides a method for programmatically scrolling to a specific Sidescroller child item based on that element’s index, rather than a calculated scroll position.
-
-```html
-  <script src="../../dist/overthrow.js"></script>
-  <script src="../../extensions/overthrow-sidescroller.js"></script>
-
-  <!-- INCLUDE THE EXTENSION -->
-  <script src="../../extensions/overthrow-sidescroller.goto.js"></script>
-```
-
-The method for using the `goto` extension is as follows:
-
-```html
-<a href="#" class="goto">Skip to the third slide</a>
-```
-
-```javascript
-var gotolink = document.querySelector( "a.goto" ),
-    overflowEl = document.querySelectorAll( ".overthrow-enabled .sidescroll-nextprev" );
-
-gogo.addEventListener( "click", function( e ) {
-  overthrow.sidescroller( overflowEl, "goTo", *3* );
-  e.preventDefault();
-});
-```
-<a href="http://filamentgroup.github.io/Overthrow/examples/sidescroller/goto.html">View Demo</a>
+<a href="http://filamentgroup.github.io/Overthrow-Sidescroller/demos/goto.html">View Demo</a>
 
 
 ## Removing Items

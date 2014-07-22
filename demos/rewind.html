@@ -4,8 +4,8 @@
 	<meta charset=utf-8 />
 	<title>Overthrow Demo</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link href="_demo-assets/demo.css" rel="stylesheet">
-	<link href="_demo-assets/proxima.nova.woff.css" rel="stylesheet">
+	<link href="../demo-assets/demo.css" rel="stylesheet">
+	<link href="../demo-assets/proxima.nova.woff.css" rel="stylesheet">
 
 	<style>
 		.overthrow-enabled .overthrow {
@@ -26,28 +26,24 @@
 		}
 	</style>
 
-	<!-- Overthrow base library: https://github.com/filamentgroup/Overthrow -->
-	<script src="src/lib/overthrow.min.js"></script>
-
 	<!-- Sidescroller Core: -->
-	<script src="dist/overthrow.sidescroller.min.js"></script>
-
+	<script src="../dist/overthrow-sidescroller.core.js"></script>
 </head>
 <body>
 
 	<div class="docs-masthead">
-		<a href="index.html" class="logo"><img src="_demo-assets/img/fg-logo.png" alt="Filament Group Inc." /></a>
+		<a href="index.html" class="logo"><img src="../demo-assets/img/fg-logo.png" alt="Filament Group Inc." /></a>
 		<h1 class="docs"><strong>Overthrow</strong> demos and documentation: <strong class="subhed">Sidescroller</strong></h1>
 	</div>
 
 	<div class="docs-globalnav">
 		<nav class="docs-nav">
-			<a href="index.html">Overview</a>
+			<a href="../index.html">Overview</a>
 			<a href="rewind.html" class="current">Rewind</a>
 			<a href="snap.html">Snap</a>
 			<a href="fixed-width.html">Fixed Width</a>
 			<a href="append.html">Append</a>
-			<a href="skiplinks.html">Skiplinks</a>	
+			<a href="skiplinks.html">Skiplinks</a>
 			<a href="disabled-nav.html">Disable Nav</a>
 			<a href="goto.html">GoTo</a>
 		</nav>
@@ -61,20 +57,20 @@
 		<div class="sidescroll-nextprev rewind">
 			<div class="overthrow sidescroll ">
 				<ul>
-					<li><img src="_demo-assets/photos/1.jpg"></li>
-					<li><img src="_demo-assets/photos/2.jpg"></li>
-					<li><img src="_demo-assets/photos/3.jpg"></li>
-					<li><img src="_demo-assets/photos/4.jpg"></li>
-					<li><img src="_demo-assets/photos/5.jpg"></li>
-					<li><img src="_demo-assets/photos/6.jpg"></li>
-					<li><img src="_demo-assets/photos/7.jpg"></li>
-					<li><img src="_demo-assets/photos/8.jpg"></li>
-					<li><img src="_demo-assets/photos/9.jpg"></li>
-					<li><img src="_demo-assets/photos/10.jpg"></li>
-					<li><img src="_demo-assets/photos/11.jpg"></li>
-					<li><img src="_demo-assets/photos/12.jpg"></li>
-					<li><img src="_demo-assets/photos/13.jpg"></li>
-					<li><img src="_demo-assets/photos/14.jpg"></li>
+					<li><img src="../demo-assets/photos/1.jpg"></li>
+					<li><img src="../demo-assets/photos/2.jpg"></li>
+					<li><img src="../demo-assets/photos/3.jpg"></li>
+					<li><img src="../demo-assets/photos/4.jpg"></li>
+					<li><img src="../demo-assets/photos/5.jpg"></li>
+					<li><img src="../demo-assets/photos/6.jpg"></li>
+					<li><img src="../demo-assets/photos/7.jpg"></li>
+					<li><img src="../demo-assets/photos/8.jpg"></li>
+					<li><img src="../demo-assets/photos/9.jpg"></li>
+					<li><img src="../demo-assets/photos/10.jpg"></li>
+					<li><img src="../demo-assets/photos/11.jpg"></li>
+					<li><img src="../demo-assets/photos/12.jpg"></li>
+					<li><img src="../demo-assets/photos/13.jpg"></li>
+					<li><img src="../demo-assets/photos/14.jpg"></li>
 				</ul>
 			</div>
 		</div>
@@ -82,7 +78,7 @@
 		<code>overthrow.sidescroller( document.querySelectorAll( ".overthrow-enabled .rewind" ), { rewind: true });</code>
 
 	</div>
-	
+
 	<script>
 			overthrow.sidescroller( document.querySelectorAll( ".overthrow-enabled .rewind" ), { rewind: true });
 	</script>

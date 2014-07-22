@@ -1,5 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
+  var core;
 
   // Project configuration.
   grunt.initConfig({
@@ -13,9 +14,18 @@ module.exports = function(grunt) {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      main: {
-        src: ['src/overthrow-detect.js','src/overthrow-toss.js','src/overthrow-polyfill.js','src/overthrow-init.js','extensions/overthrow-sidescroller.js'],
-        dest: 'dist/<%= pkg.name %>.sidescroller.js'
+      core: {
+        src: core = ['src/lib/overthrow.min.js', 'src/<%= pkg.name %>.js'],
+        dest: 'dist/<%= pkg.name %>.core.js'
+      },
+      all: {
+        src: core.concat([
+          'src/extensions/<%= pkg.name %>.append.js',
+          'src/extensions/<%= pkg.name %>.goto.js',
+          'src/extensions/<%= pkg.name %>.disable-nav.js',
+          'src/extensions/<%= pkg.name %>.skip.js'
+        ]),
+        dest: 'dist/<%= pkg.name %>.all.js'
       }
     },
     qunit: {
@@ -26,9 +36,13 @@ module.exports = function(grunt) {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      main: {
-        src: ['src/overthrow-detect.js','src/overthrow-toss.js','src/overthrow-polyfill.js','src/overthrow-init.js','extensions/overthrow-sidescroller.js'],
-        dest: 'dist/<%= pkg.name %>.sidescroller.min.js'
+      core: {
+        src: ['dist/<%= pkg.name %>.core.js'],
+        dest: 'dist/<%= pkg.name %>.core.min.js'
+      },
+      all: {
+        src: ['dist/<%= pkg.name %>.all.js'],
+        dest: 'dist/<%= pkg.name %>.all.min.js'
       }
     },
   });

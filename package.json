@@ -1,12 +1,11 @@
 {
-  "name": "overthrow",
-  "version": "0.6.6",
-  "description": "An overflow:auto polyfill for responsive design.",
+  "name": "overthrow-sidescroller",
+  "version": "0.1.0",
+  "description": "A sidescroller component based on overthrow.",
   "author": {
     "name": "Scott Jehl, Filament Group, Inc.",
     "url": "http://filamentgroup.com"
   },
-  "main": "overthrow-detect.js",
   "directories": {
     "example": "examples",
     "test": "test"
@@ -16,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/filamentgroup/Overthrow.git"
+    "url": "git://github.com/filamentgroup/Overthrow-Sidescroller.git"
   },
   "keywords": [
     "CSS"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/filamentgroup/Overthrow/issues"
+    "url": "https://github.com/filamentgroup/Overthrow-Sidescroller/issues"
   },
   "devDependencies": {
     "grunt": "0.4.0",
