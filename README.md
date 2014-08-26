@@ -87,7 +87,16 @@ overthrow.sidescroller( scrollerElements, {
 
 Lastly, you'll need some responsive CSS to make the sidescroller presentable and work properly.
 
-First, let's style the slides. A quick reset and float to start things off:
+First, setup the `.overthrow` element to overflow its container.
+
+``` css
+.overthrow-enabled .overthrow {
+      overflow: auto;
+      z-index: 0;
+}
+```
+
+Then, let's style the slides. A quick reset and float to start things off:
 
 ``` css
 .overthrow-enabled .sidescroll ul,
