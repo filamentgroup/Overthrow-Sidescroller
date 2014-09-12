@@ -113,9 +113,13 @@
 
 				function setScrollableWidth(){
 					var slides = thisScroll.querySelectorAll( "li" ),
-					  container = thisScroll.querySelector( "ul" );
+						container = thisScroll.querySelector( "ul" ),
+						width = slides[0].offsetWidth;
 
-					container.style.width = (slides[0].offsetWidth * slides.length) + "px";
+					// check to make sure scroller is not display: none
+					if( width ) {
+						container.style.width = (width * slides.length) + "px";
+					}
 				}
 
 				function refresh( options ) {
